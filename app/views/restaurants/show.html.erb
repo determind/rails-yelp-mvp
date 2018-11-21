@@ -1,0 +1,28 @@
+<div>
+  <h1> <%= @restaurant.name.upcase %> RESTAURANT</h1>
+</div>
+
+<div>
+  <ul>
+    <li>Address: <%= @restaurant.address %></li>
+    <li>Phone Number:<%= @restaurant.phone_number %></li>
+    <li>Category: <%= @restaurant.category %></li>
+  </ul>
+</div>
+
+<div>
+  <%= link_to "Add comment", new_restaurant_review_path(@restaurant) %>
+</div>
+
+<div>
+  <p> <% @restaurant.reviews.each do |review|%>
+    <%= review.content %>
+    <%= review.rating %>
+    <% end %>
+  </p>
+</div>
+
+<div>
+  <br>
+  <%= link_to "Back to list", restaurants_path %>
+</div>

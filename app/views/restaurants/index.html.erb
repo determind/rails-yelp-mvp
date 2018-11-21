@@ -1,0 +1,13 @@
+<h1> YELP MVP </h1>
+
+<div>
+  <%= link_to "Add restaurant", new_restaurant_path %>
+</div>
+
+
+<% @restaurants.each do |restaurant| %>
+  <div>
+    <%= link_to restaurant.name, restaurant_path(restaurant), class: "btn btn-primary"%>
+  </div>
+<% end %>
+
